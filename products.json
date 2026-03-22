@@ -6,7 +6,7 @@
     "price": 15000,
     "category": "Gadgets",
     "stock": 50,
-    "image": "https://via.placeholder.com/300?text=Headphones"
+    "image": "https://picsum.photos/300/300?random=1"
   },
   {
     "id": 2,
@@ -15,7 +15,7 @@
     "price": 3500,
     "category": "Gadgets",
     "stock": 200,
-    "image": "https://via.placeholder.com/300?text=USB-C+Cable"
+    "image": "https://picsum.photos/300/300?random=2"
   },
   {
     "id": 3,
@@ -24,7 +24,7 @@
     "price": 5000,
     "category": "Gadgets",
     "stock": 150,
-    "image": "https://via.placeholder.com/300?text=Phone+Case"
+    "image": "https://picsum.photos/300/300?random=3"
   },
   {
     "id": 4,
@@ -33,7 +33,7 @@
     "price": 12000,
     "category": "Gadgets",
     "stock": 75,
-    "image": "https://via.placeholder.com/300?text=Power+Bank"
+    "image": "https://picsum.photos/300/300?random=4"
   },
   {
     "id": 5,
@@ -42,7 +42,7 @@
     "price": 22000,
     "category": "Gadgets",
     "stock": 30,
-    "image": "https://via.placeholder.com/300?text=Keyboard"
+    "image": "https://picsum.photos/300/300?random=5"
   },
   {
     "id": 6,
@@ -51,7 +51,7 @@
     "price": 2000,
     "category": "Gadgets",
     "stock": 300,
-    "image": "https://via.placeholder.com/300?text=Screen+Protector"
+    "image": "https://picsum.photos/300/300?random=6"
   },
   {
     "id": 7,
@@ -60,7 +60,7 @@
     "price": 8000,
     "category": "Gadgets",
     "stock": 100,
-    "image": "https://via.placeholder.com/300?text=Laptop+Stand"
+    "image": "https://picsum.photos/300/300?random=7"
   },
   {
     "id": 8,
@@ -69,7 +69,7 @@
     "price": 10000,
     "category": "Gadgets",
     "stock": 60,
-    "image": "https://via.placeholder.com/300?text=Webcam"
+    "image": "https://picsum.photos/300/300?random=8"
   },
   {
     "id": 9,
@@ -78,7 +78,7 @@
     "price": 3500,
     "category": "Clothes",
     "stock": 120,
-    "image": "https://via.placeholder.com/300?text=T-Shirt"
+    "image": "https://picsum.photos/300/300?random=9"
   },
   {
     "id": 10,
@@ -87,7 +87,7 @@
     "price": 4000,
     "category": "Clothes",
     "stock": 85,
-    "image": "https://via.placeholder.com/300?text=Crop+Top"
+    "image": "https://picsum.photos/300/300?random=10"
   },
   {
     "id": 11,
@@ -96,7 +96,7 @@
     "price": 8500,
     "category": "Clothes",
     "stock": 110,
-    "image": "https://via.placeholder.com/300?text=Denim+Jeans"
+    "image": "https://picsum.photos/300/300?random=11"
   },
   {
     "id": 12,
@@ -105,7 +105,7 @@
     "price": 12000,
     "category": "Clothes",
     "stock": 75,
-    "image": "https://via.placeholder.com/300?text=Sneakers"
+    "image": "https://picsum.photos/300/300?random=12"
   },
   {
     "id": 13,
@@ -114,7 +114,7 @@
     "price": 5500,
     "category": "Clothes",
     "stock": 140,
-    "image": "https://via.placeholder.com/300?text=Sandals"
+    "image": "https://picsum.photos/300/300?random=13"
   },
   {
     "id": 14,
@@ -123,7 +123,7 @@
     "price": 18000,
     "category": "Clothes",
     "stock": 45,
-    "image": "https://via.placeholder.com/300?text=Jacket"
+    "image": "https://picsum.photos/300/300?random=14"
   },
   {
     "id": 15,
@@ -132,7 +132,7 @@
     "price": 2500,
     "category": "Clothes",
     "stock": 200,
-    "image": "https://via.placeholder.com/300?text=Cap"
+    "image": "https://picsum.photos/300/300?random=15"
   },
   {
     "id": 16,
@@ -141,7 +141,7 @@
     "price": 7500,
     "category": "Utensils",
     "stock": 60,
-    "image": "https://via.placeholder.com/300?text=Cooking+Pot"
+    "image": "https://picsum.photos/300/300?random=16"
   },
   {
     "id": 17,
@@ -150,7 +150,7 @@
     "price": 6000,
     "category": "Utensils",
     "stock": 85,
-    "image": "https://via.placeholder.com/300?text=Frying+Pan"
+    "image": "https://picsum.photos/300/300?random=17"
   },
   {
     "id": 18,
@@ -159,7 +159,7 @@
     "price": 12000,
     "category": "Utensils",
     "stock": 40,
-    "image": "https://via.placeholder.com/300?text=Dinner+Set"
+    "image": "https://picsum.photos/300/300?random=18"
   },
   {
     "id": 19,
@@ -168,7 +168,7 @@
     "price": 9500,
     "category": "Utensils",
     "stock": 70,
-    "image": "https://via.placeholder.com/300?text=Cutlery+Set"
+    "image": "https://picsum.photos/300/300?random=19"
   },
   {
     "id": 20,
@@ -177,7 +177,7 @@
     "price": 5500,
     "category": "Utensils",
     "stock": 100,
-    "image": "https://via.placeholder.com/300?text=Storage+Containers"
+    "image": "https://picsum.photos/300/300?random=20"
   },
   {
     "id": 21,
@@ -186,7 +186,7 @@
     "price": 4500,
     "category": "Utensils",
     "stock": 90,
-    "image": "https://via.placeholder.com/300?text=Cutting+Board"
+    "image": "https://picsum.photos/300/300?random=21"
   },
   {
     "id": 22,
@@ -195,7 +195,7 @@
     "price": 13500,
     "category": "Utensils",
     "stock": 35,
-    "image": "https://via.placeholder.com/300?text=Knife+Set"
+    "image": "https://picsum.photos/300/300?random=22"
   },
   {
     "id": 23,
@@ -204,7 +204,7 @@
     "price": 16000,
     "category": "Utensils",
     "stock": 25,
-    "image": "https://via.placeholder.com/300?text=Blender"
+    "image": "https://picsum.photos/300/300?random=23"
   },
   {
     "id": 24,
@@ -213,6 +213,6 @@
     "price": 8500,
     "category": "Utensils",
     "stock": 50,
-    "image": "https://via.placeholder.com/300?text=Electric+Kettle"
+    "image": "https://picsum.photos/300/300?random=24"
   }
 ]
