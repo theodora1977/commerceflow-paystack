@@ -4,7 +4,7 @@
     "name": "Wireless Headphones",
     "description": "High-quality wireless headphones with noise cancellation",
     "price": 15000,
-    "category": "Electronics",
+    "category": "Gadgets",
     "stock": 50,
     "image": "https://via.placeholder.com/300?text=Headphones"
   },
@@ -13,7 +13,7 @@
     "name": "USB-C Cable",
     "description": "Fast charging USB-C cable, 2 meters long",
     "price": 3500,
-    "category": "Accessories",
+    "category": "Gadgets",
     "stock": 200,
     "image": "https://via.placeholder.com/300?text=USB-C+Cable"
   },
@@ -22,7 +22,7 @@
     "name": "Phone Case",
     "description": "Durable silicone phone case with drop protection",
     "price": 5000,
-    "category": "Accessories",
+    "category": "Gadgets",
     "stock": 150,
     "image": "https://via.placeholder.com/300?text=Phone+Case"
   },
@@ -31,16 +31,16 @@
     "name": "Portable Charger",
     "description": "20000mAh power bank with dual USB ports",
     "price": 12000,
-    "category": "Electronics",
+    "category": "Gadgets",
     "stock": 75,
     "image": "https://via.placeholder.com/300?text=Power+Bank"
   },
   {
     "id": 5,
-    "name": "Keyboard",
+    "name": "Mechanical Keyboard",
     "description": "Mechanical keyboard with RGB lighting",
     "price": 22000,
-    "category": "Electronics",
+    "category": "Gadgets",
     "stock": 30,
     "image": "https://via.placeholder.com/300?text=Keyboard"
   },
@@ -49,7 +49,7 @@
     "name": "Screen Protector",
     "description": "Tempered glass screen protector for phones",
     "price": 2000,
-    "category": "Accessories",
+    "category": "Gadgets",
     "stock": 300,
     "image": "https://via.placeholder.com/300?text=Screen+Protector"
   },
@@ -58,7 +58,7 @@
     "name": "Laptop Stand",
     "description": "Adjustable aluminum laptop stand for desks",
     "price": 8000,
-    "category": "Accessories",
+    "category": "Gadgets",
     "stock": 100,
     "image": "https://via.placeholder.com/300?text=Laptop+Stand"
   },
@@ -67,8 +67,152 @@
     "name": "Webcam",
     "description": "1080p USB webcam with built-in microphone",
     "price": 10000,
-    "category": "Electronics",
+    "category": "Gadgets",
     "stock": 60,
     "image": "https://via.placeholder.com/300?text=Webcam"
+  },
+  {
+    "id": 9,
+    "name": "Men's Cotton T-Shirt",
+    "description": "Comfortable cotton t-shirt available in multiple colors",
+    "price": 3500,
+    "category": "Clothes",
+    "stock": 120,
+    "image": "https://via.placeholder.com/300?text=T-Shirt"
+  },
+  {
+    "id": 10,
+    "name": "Women's Crop Top",
+    "description": "Stylish crop top perfect for casual wear",
+    "price": 4000,
+    "category": "Clothes",
+    "stock": 85,
+    "image": "https://via.placeholder.com/300?text=Crop+Top"
+  },
+  {
+    "id": 11,
+    "name": "Denim Jeans",
+    "description": "Classic blue denim jeans with comfortable fit",
+    "price": 8500,
+    "category": "Clothes",
+    "stock": 110,
+    "image": "https://via.placeholder.com/300?text=Denim+Jeans"
+  },
+  {
+    "id": 12,
+    "name": "Casual Sneakers",
+    "description": "Comfortable casual sneakers for everyday wear",
+    "price": 12000,
+    "category": "Clothes",
+    "stock": 75,
+    "image": "https://via.placeholder.com/300?text=Sneakers"
+  },
+  {
+    "id": 13,
+    "name": "Summer Sandals",
+    "description": "Lightweight sandals perfect for hot weather",
+    "price": 5500,
+    "category": "Clothes",
+    "stock": 140,
+    "image": "https://via.placeholder.com/300?text=Sandals"
+  },
+  {
+    "id": 14,
+    "name": "Winter Jacket",
+    "description": "Warm and stylish winter jacket",
+    "price": 18000,
+    "category": "Clothes",
+    "stock": 45,
+    "image": "https://via.placeholder.com/300?text=Jacket"
+  },
+  {
+    "id": 15,
+    "name": "Baseball Cap",
+    "description": "Classic baseball cap with adjustable strap",
+    "price": 2500,
+    "category": "Clothes",
+    "stock": 200,
+    "image": "https://via.placeholder.com/300?text=Cap"
+  },
+  {
+    "id": 16,
+    "name": "Stainless Steel Cooking Pot",
+    "description": "Heavy-duty stainless steel cooking pot, 5-liter capacity",
+    "price": 7500,
+    "category": "Utensils",
+    "stock": 60,
+    "image": "https://via.placeholder.com/300?text=Cooking+Pot"
+  },
+  {
+    "id": 17,
+    "name": "Non-Stick Frying Pan",
+    "description": "Professional non-stick frying pan with ergonomic handle",
+    "price": 6000,
+    "category": "Utensils",
+    "stock": 85,
+    "image": "https://via.placeholder.com/300?text=Frying+Pan"
+  },
+  {
+    "id": 18,
+    "name": "Ceramic Dinner Set",
+    "description": "Beautiful 12-piece ceramic dinner set",
+    "price": 12000,
+    "category": "Utensils",
+    "stock": 40,
+    "image": "https://via.placeholder.com/300?text=Dinner+Set"
+  },
+  {
+    "id": 19,
+    "name": "Stainless Steel Cutlery Set",
+    "description": "24-piece stainless steel cutlery set including knives, forks, and spoons",
+    "price": 9500,
+    "category": "Utensils",
+    "stock": 70,
+    "image": "https://via.placeholder.com/300?text=Cutlery+Set"
+  },
+  {
+    "id": 20,
+    "name": "Glass Storage Containers",
+    "description": "Set of 4 glass containers with airtight lids",
+    "price": 5500,
+    "category": "Utensils",
+    "stock": 100,
+    "image": "https://via.placeholder.com/300?text=Storage+Containers"
+  },
+  {
+    "id": 21,
+    "name": "Wooden Cutting Board",
+    "description": "Large wooden cutting board with juice groove",
+    "price": 4500,
+    "category": "Utensils",
+    "stock": 90,
+    "image": "https://via.placeholder.com/300?text=Cutting+Board"
+  },
+  {
+    "id": 22,
+    "name": "Kitchen Knife Set",
+    "description": "5-piece professional kitchen knife set with wooden stand",
+    "price": 13500,
+    "category": "Utensils",
+    "stock": 35,
+    "image": "https://via.placeholder.com/300?text=Knife+Set"
+  },
+  {
+    "id": 23,
+    "name": "Food Blender",
+    "description": "Powerful electric food blender with 1.5L capacity",
+    "price": 16000,
+    "category": "Utensils",
+    "stock": 25,
+    "image": "https://via.placeholder.com/300?text=Blender"
+  },
+  {
+    "id": 24,
+    "name": "Electric Kettle",
+    "description": "Fast heating electric kettle with auto shut-off",
+    "price": 8500,
+    "category": "Utensils",
+    "stock": 50,
+    "image": "https://via.placeholder.com/300?text=Electric+Kettle"
   }
 ]
