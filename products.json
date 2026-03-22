@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "Wireless Headphones",
+    "description": "High-quality wireless headphones with noise cancellation",
+    "price": 15000,
+    "category": "Electronics",
+    "stock": 50,
+    "image": "https://via.placeholder.com/300?text=Headphones"
+  },
+  {
+    "id": 2,
+    "name": "USB-C Cable",
+    "description": "Fast charging USB-C cable, 2 meters long",
+    "price": 3500,
+    "category": "Accessories",
+    "stock": 200,
+    "image": "https://via.placeholder.com/300?text=USB-C+Cable"
+  },
+  {
+    "id": 3,
+    "name": "Phone Case",
+    "description": "Durable silicone phone case with drop protection",
+    "price": 5000,
+    "category": "Accessories",
+    "stock": 150,
+    "image": "https://via.placeholder.com/300?text=Phone+Case"
+  },
+  {
+    "id": 4,
+    "name": "Portable Charger",
+    "description": "20000mAh power bank with dual USB ports",
+    "price": 12000,
+    "category": "Electronics",
+    "stock": 75,
+    "image": "https://via.placeholder.com/300?text=Power+Bank"
+  },
+  {
+    "id": 5,
+    "name": "Keyboard",
+    "description": "Mechanical keyboard with RGB lighting",
+    "price": 22000,
+    "category": "Electronics",
+    "stock": 30,
+    "image": "https://via.placeholder.com/300?text=Keyboard"
+  },
+  {
+    "id": 6,
+    "name": "Screen Protector",
+    "description": "Tempered glass screen protector for phones",
+    "price": 2000,
+    "category": "Accessories",
+    "stock": 300,
+    "image": "https://via.placeholder.com/300?text=Screen+Protector"
+  },
+  {
+    "id": 7,
+    "name": "Laptop Stand",
+    "description": "Adjustable aluminum laptop stand for desks",
+    "price": 8000,
+    "category": "Accessories",
+    "stock": 100,
+    "image": "https://via.placeholder.com/300?text=Laptop+Stand"
+  },
+  {
+    "id": 8,
+    "name": "Webcam",
+    "description": "1080p USB webcam with built-in microphone",
+    "price": 10000,
+    "category": "Electronics",
+    "stock": 60,
+    "image": "https://via.placeholder.com/300?text=Webcam"
+  }
+]
