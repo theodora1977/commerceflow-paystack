@@ -8,7 +8,7 @@ from fastapi import Depends, HTTPException
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from jose import JWTError, jwt
 
-from app.core.config import settings
+from config import settings
 
 
 # =========================
@@ -22,7 +22,7 @@ def verify_paystack_signature(request_body: bytes, signature: Optional[str]) -> 
         return False
 
     computed_hash = hmac.new(
-        settings.PAYSTACK_WEBHOOK_SECRET.encode("utf-8"),
+        settings.PAYSTACK_SECRET_KEY.get_secret_value().encode("utf-8"),
         request_body,
         hashlib.sha512
     ).hexdigest()
@@ -47,7 +47,7 @@ def create_access_token(data: dict) -> str:
 
     encoded_jwt = jwt.encode(
         to_encode,
-        settings.JWT_SECRET_KEY,
+        settings.JWT_SECRET_KEY.get_secret_value(),
         algorithm=settings.JWT_ALGORITHM
     )
 
@@ -61,7 +61,7 @@ def verify_access_token(token: str):
     try:
         payload = jwt.decode(
             token,
-            settings.JWT_SECRET_KEY,
+            settings.JWT_SECRET_KEY.get_secret_value(),
             algorithms=[settings.JWT_ALGORITHM]
         )
         return payload

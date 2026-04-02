@@ -1,18 +1,18 @@
-import os
 import httpx
-from dotenv import load_dotenv
+import logging
+from config import settings
 
-# Load environment variables from .env file
-load_dotenv()
+logger = logging.getLogger(__name__)
 
-# CONFIG
-PAYSTACK_SECRET_KEY = os.getenv("PAYSTACK_SECRET_KEY")
-PAYSTACK_BASE_URL   = "https://api.paystack.co"
-
-HEADERS = {
-    "Authorization": f"Bearer {PAYSTACK_SECRET_KEY}",
-    "Content-Type":  "application/json"
-}
+def get_auth_headers():
+    """
+    Always returns fresh headers. This prevents issues where the 
+    Secret Key might be empty during the initial module load.
+    """
+    return {
+        "Authorization": f"Bearer {settings.PAYSTACK_SECRET_KEY.get_secret_value()}",
+        "Content-Type":  "application/json"
+    }
 
 # FUNCTION 1 — Initialize Payment
 
@@ -22,32 +22,41 @@ def initialize_payment(email: str, amount: int, reference: str):
 
     Args:
         email     : customer's email address
-        amount    : price in NAIRA (we convert to kobo inside)
+        amount    : price in NAIRA
         reference : unique ID for this transaction
 
     Returns:
         dict: Paystack API response
     """
+    url = f"{settings.PAYSTACK_BASE_URL}/transaction/initialize"
 
-    url = f"{PAYSTACK_BASE_URL}/transaction/initialize"
+    # Use 127.0.0.1 to match your local server environment
+    host_url = settings.APP_URL.rstrip("/")
 
     payload = {
         "email"     : email,
         "amount"    : amount * 100,   # Paystack needs KOBO → multiply by 100
         "reference" : reference,
-        "callback_url": os.getenv("BASE_URL", "http://localhost:8000") + "/payment/verify"
+        # Redirect user back to our success.html page
+        "callback_url": f"{host_url}/success"
     }
 
-    print(f"[INIT PAYMENT] Sending request for {email}, amount: ₦{amount}")
+    logger.info(f"Initializing Paystack payment for {email} — ₦{amount}")
+    # Debug: Check the first few characters of the key being sent
+    secret_preview = settings.PAYSTACK_SECRET_KEY.get_secret_value()[:7]
+    logger.debug(f"Using Key starting with: {secret_preview}...")
 
     try:
-        response = httpx.post(url, json=payload, headers=HEADERS, timeout=10)
+        response = httpx.post(url, json=payload, headers=get_auth_headers(), timeout=10)
         result   = response.json()
-        print(f"[INIT PAYMENT] Response: {result}")
+        
+        if not result.get("status"):
+            logger.error(f"Paystack Error: {result.get('message')} | HTTP {response.status_code}")
+            
         return result
 
     except Exception as e:
-        print(f"[INIT PAYMENT ERROR] {str(e)}")
+        logger.exception("Failed to initialize payment")
         return {"status": False, "message": str(e)}
 
 
@@ -64,16 +73,16 @@ def verify_payment(reference: str):
         dict: Paystack API response
     """
 
-    url = f"{PAYSTACK_BASE_URL}/transaction/verify/{reference}"
+    url = f"{settings.PAYSTACK_BASE_URL}/transaction/verify/{reference}"
 
-    print(f"[VERIFY PAYMENT] Checking reference: {reference}")
+    logger.info(f"Verifying transaction reference: {reference}")
 
     try:
-        response = httpx.get(url, headers=HEADERS, timeout=10)
+        response = httpx.get(url, headers=get_auth_headers(), timeout=10)
         result   = response.json()
-        print(f"[VERIFY PAYMENT] Status: {result.get('data', {}).get('status')}")
+        logger.info(f"Verify Result: {result.get('data', {}).get('status')}")
         return result
 
     except Exception as e:
-        print(f"[VERIFY PAYMENT ERROR] {str(e)}")
+        logger.exception(f"Verification failed for reference: {reference}")
         return {"status": False, "message": str(e)}

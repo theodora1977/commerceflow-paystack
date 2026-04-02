@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CommerceFlow — Premium Store</title>
+  <meta name="description" content="Shop the essentials at CommerceFlow. Secure payments powered by Paystack." />
+  <meta property="og:title" content="CommerceFlow — Premium Store" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Karla:ital,wght@0,300;0,400;0,500;0,600;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-mark">CF</span>
+        <span class="logo-text">CommerceFlow</span>
+      </div>
+
+      <nav class="header-nav">
+        <a href="#" class="nav-link active" data-filter="all">All</a>
+        <a href="#" class="nav-link" data-filter="electronics">Electronics</a>
+        <a href="#" class="nav-link" data-filter="jewelery">Jewelry</a>
+        <a href="#" class="nav-link" data-filter="men's clothing">Men</a>
+        <a href="#" class="nav-link" data-filter="women's clothing">Women</a>
+      </nav>
+
+      <button class="cart-trigger" id="cartTrigger" aria-label="Open cart">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 01-8 0"/>
+        </svg>
+        <span class="cart-badge" id="cartBadge">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">Curated Collection</p>
+      <h1 class="hero-title">
+        Shop the<br />
+        <em>Essentials</em>
+      </h1>
+      <p class="hero-sub">Powered by Paystack · Delivered to your door</p>
+    </div>
+    <div class="hero-deco">
+      <div class="deco-ring deco-ring--1"></div>
+      <div class="deco-ring deco-ring--2"></div>
+      <div class="deco-ring deco-ring--3"></div>
+    </div>
+  </section>
+
+  <!-- ===================== PRODUCTS ===================== -->
+  <main class="products-section">
+    <div class="section-header">
+      <h2 class="section-title" id="sectionTitle">All Products</h2>
+      <span class="product-count" id="productCount">Loading items...</span>
+    </div>
+
+    <div class="products-grid" id="productsGrid">
+      <!-- Skeleton loaders shown while fetching -->
+      <div class="product-card skeleton"></div>
+      <div class="product-card skeleton"></div>
+      <div class="product-card skeleton"></div>
+      <div class="product-card skeleton"></div>
+      <div class="product-card skeleton"></div>
+      <div class="product-card skeleton"></div>
+    </div>
+
+    <!-- Empty state -->
+    <div class="empty-state" id="emptyState" style="display:none;">
+      <div class="empty-icon">○</div>
+      <p>No products in this category.</p>
+    </div>
+  </main>
+
+  <!-- ===================== CART DRAWER ===================== -->
+  <div class="overlay" id="overlay"></div>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
+    <div class="cart-header">
+      <h2 class="cart-title">Your Cart</h2>
+      <button class="cart-close" id="cartClose" aria-label="Close cart">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="cart-body" id="cartBody">
+      <div class="cart-empty" id="cartEmpty">
+        <div class="cart-empty-icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 01-8 0"/>
+          </svg>
+        </div>
+        <p>Your cart is empty.</p>
+        <span>Add items to get started.</span>
+      </div>
+      <div class="cart-items" id="cartItems"></div>
+    </div>
+
+    <div class="cart-footer" id="cartFooter" style="display:none;">
+      <div class="cart-summary">
+        <span>Subtotal</span>
+        <span class="cart-total" id="cartTotal">₦0</span>
+      </div>
+
+      <div class="checkout-form">
+        <label class="form-label" for="emailInput">Email for receipt</label>
+        <input
+          type="email"
+          id="emailInput"
+          class="form-input"
+          placeholder="you@example.com"
+          autocomplete="email"
+        />
+        <p class="form-hint">Paystack will send your receipt here.</p>
+      </div>
+
+      <button class="checkout-btn" id="checkoutBtn">
+        <span class="btn-text">Checkout with Paystack</span>
+        <span class="btn-spinner" style="display:none;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="spin">
+            <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+          </svg>
+        </span>
+      </button>
+
+      <p class="secure-note">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+        Secured by Paystack
+      </p>
+    </div>
+  </aside>
+
+  <!-- ===================== TOAST ===================== -->
+  <div class="toast" id="toast"></div>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>

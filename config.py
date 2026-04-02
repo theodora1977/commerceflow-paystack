@@ -1,60 +1,32 @@
-import os
-from dotenv import load_dotenv
+from pydantic import SecretStr, Field
+from pydantic_settings import BaseSettings, SettingsConfigDict
+from typing import Optional
 
-load_dotenv()
-
-
-class Settings:
+class Settings(BaseSettings):
     # =========================
     # APP CONFIG
     # =========================
-    APP_NAME: str = "E-Commerce FastAPI Backend"
-    DEBUG: bool = os.getenv("DEBUG", "True") == "True"
-
-    HOST: str = os.getenv("HOST", "127.0.0.1")
-    PORT: int = int(os.getenv("PORT", 8000))
+    APP_NAME: str = "CommerceFlow API"
+    DEBUG: bool = True
+    HOST: str = "127.0.0.1"
+    PORT: int = 8000
+    APP_URL: str = Field(default="http://127.0.0.1:8000", validation_alias="APP_URL")
 
     # =========================
     # PAYSTACK CONFIG
     # =========================
-    PAYSTACK_SECRET_KEY: str = os.getenv("PAYSTACK_SECRET_KEY", "")
-    PAYSTACK_PUBLIC_KEY: str = os.getenv("PAYSTACK_PUBLIC_KEY", "")
-    PAYSTACK_BASE_URL: str = os.getenv(
-        "PAYSTACK_BASE_URL", "https://api.paystack.co"
-    )
-
-    # Webhook uses same secret key
-    PAYSTACK_WEBHOOK_SECRET: str = os.getenv(
-        "PAYSTACK_SECRET_KEY", ""
-    )
+    PAYSTACK_SECRET_KEY: SecretStr
+    PAYSTACK_PUBLIC_KEY: Optional[str] = None
+    PAYSTACK_BASE_URL: str = "https://api.paystack.co"
 
     # =========================
     # JWT CONFIG
     # =========================
-    JWT_SECRET_KEY: str = os.getenv("JWT_SECRET_KEY", "supersecretkey")
+    JWT_SECRET_KEY: SecretStr = Field(default="supersecretkey")
     JWT_ALGORITHM: str = "HS256"
-    ACCESS_TOKEN_EXPIRE_MINUTES: int = int(
-        os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES", 60)
-    )
+    ACCESS_TOKEN_EXPIRE_MINUTES: int = 60
+    DATABASE_URL: str = "sqlite:///./commerceflow.db"
 
-    # =========================
-    # DATABASE (OPTIONAL)
-    # =========================
-    DATABASE_URL: str = os.getenv("DATABASE_URL", "")
-
+    model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
 settings = Settings()
-
-
-# =========================
-# VALIDATION (Fail fast)
-# =========================
-def validate_settings():
-    if not settings.PAYSTACK_SECRET_KEY:
-        raise ValueError("PAYSTACK_SECRET_KEY is not set")
-
-    if not settings.JWT_SECRET_KEY:
-        raise ValueError("JWT_SECRET_KEY is not set")
-
-
-validate_settings()
