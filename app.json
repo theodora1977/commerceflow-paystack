@@ -8,6 +8,10 @@
       "description": "Your Paystack Secret Key from the dashboard (sk_test_... or sk_live_...).",
       "required": true
     },
+    "PAYSTACK_PUBLIC_KEY": {
+      "description": "Your Paystack Public Key from the dashboard (pk_test_... or pk_live_...).",
+      "required": false
+    },
     "APP_URL": {
       "description": "The base URL where the application is hosted.",
       "value": "http://127.0.0.1:8000"

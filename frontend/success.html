@@ -1,113 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Payment Status — CommerceFlow</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Karla:ital,wght@0,300;0,400;0,500;0,600;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/static/css/style.css" />
+    <title>Payment Successful</title>
+    <link rel="stylesheet" href="/static/style.css">
 </head>
-<body class="status-page">
-
-  <header class="site-header site-header--minimal">
-    <div class="header-inner">
-      <a href="/" class="logo">
-        <span class="logo-mark">CF</span>
-        <span class="logo-text">CommerceFlow</span>
-      </a>
+<body style="text-align: center; padding-top: 100px;">
+    <div class="product-card" style="display: inline-block; flex-direction: column;">
+        <h1 class="status-success">Payment Received!</h1>
+        <p>Thank you for your purchase. Your order is being processed.</p>
+        <br>
+        <a href="/" class="btn-pay" style="text-decoration: none;">Back to Store</a>
     </div>
-  </header>
-
-  <main class="status-main">
-
-    <!-- Loading state -->
-    <div class="status-card" id="stateLoading">
-      <div class="status-icon status-icon--loading">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="spin">
-          <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
-        </svg>
-      </div>
-      <h1 class="status-title">Verifying payment…</h1>
-      <p class="status-sub">This takes just a moment.</p>
-    </div>
-
-    <!-- Success state -->
-    <div class="status-card" id="stateSuccess" style="display:none;">
-      <div class="status-icon status-icon--success">
-        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-          <path d="M20 6L9 17l-5-5"/>
-        </svg>
-      </div>
-      <p class="status-eyebrow">Payment confirmed</p>
-      <h1 class="status-title">Thank you!</h1>
-      <p class="status-sub">Your transaction was successful. Check your email for your receipt.</p>
-
-      <div class="order-details" id="orderDetails">
-        <div class="order-row">
-          <span class="order-label">Reference</span>
-          <code class="order-value" id="detailRef">—</code>
-        </div>
-        <div class="order-row">
-          <span class="order-label">Amount</span>
-          <span class="order-value order-value--amount" id="detailAmount">—</span>
-        </div>
-        <div class="order-row">
-          <span class="order-label">Email</span>
-          <span class="order-value" id="detailEmail">—</span>
-        </div>
-        <div class="order-row">
-          <span class="order-label">Status</span>
-          <span class="order-value status-pill status-pill--success">Paid</span>
-        </div>
-      </div>
-
-      <a href="/" class="back-btn">Continue Shopping</a>
-    </div>
-
-    <!-- Failed state -->
-    <div class="status-card" id="stateFailed" style="display:none;">
-      <div class="status-icon status-icon--failed">
-        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
-        </svg>
-      </div>
-      <p class="status-eyebrow">Payment unsuccessful</p>
-      <h1 class="status-title" id="failedTitle">Payment Failed</h1>
-      <p class="status-sub" id="failedSub">Your card was declined or you closed the payment page. No charge was made.</p>
-
-      <div class="order-details">
-        <div class="order-row">
-          <span class="order-label">Reference</span>
-          <code class="order-value" id="failedRef">—</code>
-        </div>
-        <div class="order-row">
-          <span class="order-label">Status</span>
-          <span class="order-value status-pill status-pill--failed" id="failedStatus">Failed</span>
-        </div>
-      </div>
-
-      <a href="/" class="back-btn back-btn--secondary">Try Again</a>
-    </div>
-
-    <!-- Error state (no reference / API down) -->
-    <div class="status-card" id="stateError" style="display:none;">
-      <div class="status-icon status-icon--failed">
-        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-          <circle cx="12" cy="12" r="10"/>
-          <line x1="12" y1="8" x2="12" y2="12"/>
-          <line x1="12" y1="16" x2="12.01" y2="16"/>
-        </svg>
-      </div>
-      <p class="status-eyebrow">Something went wrong</p>
-      <h1 class="status-title">Verification Error</h1>
-      <p class="status-sub" id="errorMsg">We couldn't verify your payment. Please contact support with your transaction reference.</p>
-      <a href="/" class="back-btn back-btn--secondary">Return to Store</a>
-    </div>
-
-  </main>
-
-  <script src="/static/js/success.js"></script>
 </body>
 </html>
