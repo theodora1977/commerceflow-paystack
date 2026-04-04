@@ -15,7 +15,7 @@
 // ============================================================
 // CONFIG
 // ============================================================
-const API_BASE = 'http://127.0.0.1:8000';
+const API_BASE = 'https://commerceflow-paystack-n5ur.onrender.com';
 
 // USD → NGN exchange rate for display purposes
 // In a real system this would come from an FX API
