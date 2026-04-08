@@ -10,8 +10,10 @@ class Settings(BaseSettings):
     DEBUG: bool = True
     HOST: str = "127.0.0.1"
     PORT: int = 8000
-    APP_URL: str = Field(default="http://127.0.0.1:8000", validation_alias="APP_URL")
-
+    APP_URL: str = Field(
+    default="https://commerceflow-paystack-n5ur.onrender.com",
+    validation_alias="APP_URL"
+)
     # =========================
     # PAYSTACK CONFIG
     # =========================
